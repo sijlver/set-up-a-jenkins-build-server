@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(hpp());
 
 app.get('*', (req, res) => {
-  return res.json({ query: req.query, server: `Running server at ${PORT}` });
+  return res.json({ query: req.query, port: PORT });
 });
 
 app.listen(PORT, () => {

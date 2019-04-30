@@ -2,7 +2,11 @@
 
 ## Ubuntu
 
-* Conect to Ubuntu
+For example
+user_name=ubuntu1
+public_dns_name=0.0.0.1
+
+* Connect to Ubuntu
 
 ```
 ssh -i /path/my-key-pair.pem user_name@public_dns_name
@@ -37,13 +41,13 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
-If you have error `Failed to start LSB: Start Jenki` install Java Runtime Environment:
+If you have an error `Failed to start LSB: Start Jenkins` install Java Runtime Environment:
 
 ```
 sudo apt install openjdk-8-jre
 ```
 
-or so to fix that you should chose version 8 as your default java environment by simply running `sudo update-alternatives --config java` and then chosing your version 8
+or to run `sudo update-alternatives --config java` and then choose version 8
 
 * Start Jenkins
 
@@ -51,9 +55,14 @@ or so to fix that you should chose version 8 as your default java environment by
 sudo service jenkins start
 ```
 
-If need restsart Jenkins server: `sudo service jenkins restart`
+Or for restarting Jenkins server: `sudo service jenkins restart`
+
+```
+sudo service jenkins restart
+```
 
 * Connect to `http://<your_server_public_DNS>:8080`
+* If you couldn't do this You should add a security group with type custom TCP Rule Protocol TCP Port 8080 for Jenkins
 
 ![image](https://drive.google.com/uc?authuser=0&id=1pdqaKUsh-nbSMxReJWNxJFjJ2CCotjf6&export=download)
 
